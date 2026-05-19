@@ -45,8 +45,13 @@ namespace Otomasyon_Projesi
             {
                 MessageBox.Show("Hatalı Kullanıcı Adı veya Şifre! Lütfen tekrar deneyin.");
                  }
-              } 
-            }
+              }
+
+        private void txt_sifre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
           }
         
             

@@ -72,6 +72,7 @@
             this.txt_sifre.PasswordChar = '*';
             this.txt_sifre.Size = new System.Drawing.Size(100, 22);
             this.txt_sifre.TabIndex = 3;
+            this.txt_sifre.TextChanged += new System.EventHandler(this.txt_sifre_TextChanged);
             // 
             // txt_kullanici_adi
             // 
