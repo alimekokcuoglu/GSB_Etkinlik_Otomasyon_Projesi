@@ -1,6 +1,6 @@
 ﻿namespace Otomasyon_Projesi
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             // lbl_kullanici_adi
             // 
             this.lbl_kullanici_adi.AutoSize = true;
-            this.lbl_kullanici_adi.Location = new System.Drawing.Point(64, 242);
+            this.lbl_kullanici_adi.Location = new System.Drawing.Point(73, 166);
             this.lbl_kullanici_adi.Name = "lbl_kullanici_adi";
             this.lbl_kullanici_adi.Size = new System.Drawing.Size(85, 16);
             this.lbl_kullanici_adi.TabIndex = 0;
@@ -47,7 +47,7 @@
             // lbl_sifre
             // 
             this.lbl_sifre.AutoSize = true;
-            this.lbl_sifre.Location = new System.Drawing.Point(64, 188);
+            this.lbl_sifre.Location = new System.Drawing.Point(73, 252);
             this.lbl_sifre.Name = "lbl_sifre";
             this.lbl_sifre.Size = new System.Drawing.Size(40, 16);
             this.lbl_sifre.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             // txt_sifre
             // 
-            this.txt_sifre.Location = new System.Drawing.Point(180, 188);
+            this.txt_sifre.Location = new System.Drawing.Point(180, 246);
             this.txt_sifre.Name = "txt_sifre";
             this.txt_sifre.PasswordChar = '*';
             this.txt_sifre.Size = new System.Drawing.Size(100, 22);
@@ -75,13 +75,13 @@
             // 
             // txt_kullanici_adi
             // 
-            this.txt_kullanici_adi.Location = new System.Drawing.Point(180, 239);
+            this.txt_kullanici_adi.Location = new System.Drawing.Point(180, 166);
             this.txt_kullanici_adi.Name = "txt_kullanici_adi";
             this.txt_kullanici_adi.Size = new System.Drawing.Size(100, 22);
             this.txt_kullanici_adi.TabIndex = 4;
             this.txt_kullanici_adi.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,7 +93,7 @@
             this.Controls.Add(this.lbl_sifre);
             this.Controls.Add(this.lbl_kullanici_adi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GSB Kyk Etkinlik Otomasyonu-Giriş";
             this.Load += new System.EventHandler(this.Form1_Load);

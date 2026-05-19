@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Otomasyon_Projesi
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace Otomasyon_Projesi
             {
                 MessageBox.Show("Giriş Başarılı! GSB KYK Etkinlik Otomasyonuna Hoş Geldiniz.");
 
-                Form1 anaSayfa = new Form1();
+                LoginForm anaSayfa = new LoginForm();
                 anaSayfa.Show();
 
                 this.Hide();
