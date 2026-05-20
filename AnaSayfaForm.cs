@@ -23,7 +23,18 @@ namespace Otomasyon_Projesi
         {
             try
             {
-                dgw_ogrenciler.DataSource = db.Ogrenciler.ToList();
+                var ogrenciler = db.Ogrenciler.ToList();
+                dgw_ogrenciler.DataSource = ogrenciler;
+
+                dgw_ogrenciler.Columns["Ogrenci_Id"].HeaderText = "Öğrenci ID";
+                dgw_ogrenciler.Columns["Ogrenci_TC_No"].HeaderText = "T.C. Kimlik No";
+                dgw_ogrenciler.Columns["Ogrenci_Ad"].HeaderText = "Öğrenci Adı";
+                dgw_ogrenciler.Columns["Ogrenci_Soyad"].HeaderText = "Öğrenci Soyadı";
+                dgw_ogrenciler.Columns["Ogrenci_Sifre"].HeaderText = "Şifre";
+                dgw_ogrenciler.Columns["Ogrenci_Blok"].HeaderText = "Blok";
+                dgw_ogrenciler.Columns["Ogrenci_Kat"].HeaderText = "Kat";
+
+                dgw_ogrenciler.Columns["Ogrenci_Id"].Visible = false;
             }
             catch (Exception ex)
             {
