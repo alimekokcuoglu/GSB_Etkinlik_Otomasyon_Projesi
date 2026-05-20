@@ -35,6 +35,8 @@ namespace Otomasyon_Projesi
                 dgw_ogrenciler.Columns["Ogrenci_Kat"].HeaderText = "Kat";
 
                 dgw_ogrenciler.Columns["Ogrenci_Id"].Visible = false;
+
+                dgw_ogrenciler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
             {
