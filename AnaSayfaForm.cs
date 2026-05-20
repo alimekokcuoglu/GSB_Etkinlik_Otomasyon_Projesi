@@ -16,14 +16,20 @@ namespace Otomasyon_Projesi
         {
             InitializeComponent();
         }
+        OgrenciDbContext db = new OgrenciDbContext();
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void btn_listele_Click(object sender, EventArgs e)
         {
+            try
+            {
+                dgw_ogrenciler.DataSource = db.Ogrenciler.ToList();
+            }
+            catch (Exception ex)
+            {
 
-        }
-
-        private void v_Click(object sender, EventArgs e)
-        {
+                MessageBox.Show($"Hata = {ex.Message}");
+            }
 
         }
     }

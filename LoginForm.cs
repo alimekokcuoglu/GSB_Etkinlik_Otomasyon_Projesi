@@ -36,7 +36,7 @@ namespace Otomasyon_Projesi
             {
                 MessageBox.Show("Giriş Başarılı! GSB KYK Etkinlik Otomasyonuna Hoş Geldiniz.");
 
-                LoginForm anaSayfa = new LoginForm();
+                AnaSayfaForm anaSayfa = new AnaSayfaForm(); 
                 anaSayfa.Show();
 
                 this.Hide();
