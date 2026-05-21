@@ -193,14 +193,19 @@ namespace Otomasyon_Projesi
             }
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void btn_form_kayitlar_Click(object sender, EventArgs e)
         {
+            Form_Kayitlar form_kayit = new Form_Kayitlar();
+            this.Hide();
+            form_kayit.ShowDialog();
 
+            this.Close();
         }
     }
-}
-        
-    
-    
+    }
 
-            
+
+
+
+
+

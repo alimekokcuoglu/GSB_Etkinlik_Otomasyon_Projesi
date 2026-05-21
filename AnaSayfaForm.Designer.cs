@@ -44,9 +44,11 @@
             this.btn_listele = new System.Windows.Forms.Button();
             this.btn_sil = new System.Windows.Forms.Button();
             this.btn_guncelle = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox_gecis = new System.Windows.Forms.GroupBox();
+            this.btn_form_kayitlar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ogrenciler)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox_gecis.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgw_ogrenciler
@@ -205,22 +207,32 @@
             this.btn_guncelle.UseVisualStyleBackColor = true;
             this.btn_guncelle.Click += new System.EventHandler(this.btn_guncelle_Click);
             // 
-            // groupBox2
+            // groupBox_gecis
             // 
-            this.groupBox2.Location = new System.Drawing.Point(588, 277);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 200);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.groupBox_gecis.Controls.Add(this.btn_form_kayitlar);
+            this.groupBox_gecis.Location = new System.Drawing.Point(562, 277);
+            this.groupBox_gecis.Name = "groupBox_gecis";
+            this.groupBox_gecis.Size = new System.Drawing.Size(200, 200);
+            this.groupBox_gecis.TabIndex = 6;
+            this.groupBox_gecis.TabStop = false;
+            this.groupBox_gecis.Text = "FORMLAR ARASI GEÇİŞ";
+            // 
+            // btn_form_kayitlar
+            // 
+            this.btn_form_kayitlar.Location = new System.Drawing.Point(61, 40);
+            this.btn_form_kayitlar.Name = "btn_form_kayitlar";
+            this.btn_form_kayitlar.Size = new System.Drawing.Size(75, 40);
+            this.btn_form_kayitlar.TabIndex = 0;
+            this.btn_form_kayitlar.Text = "Kayıt İşlemleri";
+            this.btn_form_kayitlar.UseVisualStyleBackColor = true;
+            this.btn_form_kayitlar.Click += new System.EventHandler(this.btn_form_kayitlar_Click);
             // 
             // AnaSayfaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 504);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox_gecis);
             this.Controls.Add(this.btn_guncelle);
             this.Controls.Add(this.btn_sil);
             this.Controls.Add(this.btn_listele);
@@ -232,6 +244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ogrenciler)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox_gecis.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -254,6 +267,7 @@
         private System.Windows.Forms.Button btn_guncelle;
         private System.Windows.Forms.Label lbl_blok;
         private System.Windows.Forms.ComboBox cmb_blok;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox_gecis;
+        private System.Windows.Forms.Button btn_form_kayitlar;
     }
 }
