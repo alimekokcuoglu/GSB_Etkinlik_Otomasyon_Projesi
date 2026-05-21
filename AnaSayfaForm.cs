@@ -19,6 +19,8 @@ namespace Otomasyon_Projesi
         OgrenciDbContext db = new OgrenciDbContext();
 
 
+
+
         private void btn_listele_Click(object sender, EventArgs e)
         {
             try
@@ -57,30 +59,46 @@ namespace Otomasyon_Projesi
                     return;
                 }
 
+
+                if (cmb_blok.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Lütfen listeden bir Blok seçiniz!");
+                    return;
+                }
+
+
                 string otomatikSifre = txt_tc.Text.Substring(txt_tc.Text.Length - 4);
+
 
                 Ogrenci newOgrenci = new Ogrenci()
                 {
                     Ogrenci_TC_No = txt_tc.Text,
                     Ogrenci_Ad = txt_isim.Text,
                     Ogrenci_Soyad = txt_soyisim.Text,
-                    Ogrenci_Blok = cmb_blok.Text,                       
+                    Ogrenci_Blok = cmb_blok.Text,
                     Ogrenci_Kat = Convert.ToInt32(txt_oda.Text),
-                    Ogrenci_Sifre = "1234"
+                    Ogrenci_Sifre = otomatikSifre
                 };
 
                 db.Ogrenciler.Add(newOgrenci);
                 db.SaveChanges();
 
-                MessageBox.Show("Öğrenci Kaydı Başarıyla Tamamlandı!");
-                btn_listele_Click(sender, e);
 
+                MessageBox.Show($"Yeni Öğrenci Başarıyla Tanımlandı!\nSistem Giriş Şifresi: {otomatikSifre}",
+                                "Sistem Bildirimi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btn_listele.PerformClick();
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 MessageBox.Show($"Hata = {ex.Message}");
+
             }
         }
+
+        
+
+        }
     }
-}
+
+            

@@ -87,6 +87,7 @@
             // txt_tc
             // 
             this.txt_tc.Location = new System.Drawing.Point(138, 97);
+            this.txt_tc.MaxLength = 11;
             this.txt_tc.Name = "txt_tc";
             this.txt_tc.Size = new System.Drawing.Size(100, 22);
             this.txt_tc.TabIndex = 6;
