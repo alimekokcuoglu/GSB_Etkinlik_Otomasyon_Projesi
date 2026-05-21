@@ -96,9 +96,21 @@ namespace Otomasyon_Projesi
             }
         }
 
-        
+       
 
+        private void dgw_ogrenciler_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+               
+                txt_tc.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_TC_No"].Value.ToString();
+                txt_isim.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Ad"].Value.ToString();        
+                txt_soyisim.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Soyad"].Value.ToString();    
+                txt_oda.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Kat"].Value.ToString();
+                cmb_blok.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Blok"].Value.ToString();
+            }
         }
+    }
     }
 
             

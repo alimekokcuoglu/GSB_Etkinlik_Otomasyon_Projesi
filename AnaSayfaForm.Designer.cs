@@ -30,6 +30,8 @@
         {
             this.dgw_ogrenciler = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_blok = new System.Windows.Forms.ComboBox();
+            this.lbl_blok = new System.Windows.Forms.Label();
             this.txt_oda = new System.Windows.Forms.TextBox();
             this.txt_tc = new System.Windows.Forms.TextBox();
             this.txt_soyisim = new System.Windows.Forms.TextBox();
@@ -42,8 +44,6 @@
             this.btn_listele = new System.Windows.Forms.Button();
             this.btn_sil = new System.Windows.Forms.Button();
             this.btn_guncelle = new System.Windows.Forms.Button();
-            this.lbl_blok = new System.Windows.Forms.Label();
-            this.cmb_blok = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ogrenciler)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             this.dgw_ogrenciler.RowTemplate.Height = 24;
             this.dgw_ogrenciler.Size = new System.Drawing.Size(776, 191);
             this.dgw_ogrenciler.TabIndex = 0;
+            this.dgw_ogrenciler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_ogrenciler_CellClick);
             // 
             // groupBox1
             // 
@@ -76,6 +77,27 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Öğrenci Kayıt Bilgileri";
+            // 
+            // cmb_blok
+            // 
+            this.cmb_blok.FormattingEnabled = true;
+            this.cmb_blok.Items.AddRange(new object[] {
+            "A Blok",
+            "B Blok",
+            "C Blok"});
+            this.cmb_blok.Location = new System.Drawing.Point(138, 164);
+            this.cmb_blok.Name = "cmb_blok";
+            this.cmb_blok.Size = new System.Drawing.Size(121, 24);
+            this.cmb_blok.TabIndex = 9;
+            // 
+            // lbl_blok
+            // 
+            this.lbl_blok.AutoSize = true;
+            this.lbl_blok.Location = new System.Drawing.Point(16, 164);
+            this.lbl_blok.Name = "lbl_blok";
+            this.lbl_blok.Size = new System.Drawing.Size(40, 16);
+            this.lbl_blok.TabIndex = 8;
+            this.lbl_blok.Text = "Blok :";
             // 
             // txt_oda
             // 
@@ -179,27 +201,6 @@
             this.btn_guncelle.TabIndex = 5;
             this.btn_guncelle.Text = "GÜNCELLE";
             this.btn_guncelle.UseVisualStyleBackColor = true;
-            // 
-            // lbl_blok
-            // 
-            this.lbl_blok.AutoSize = true;
-            this.lbl_blok.Location = new System.Drawing.Point(16, 164);
-            this.lbl_blok.Name = "lbl_blok";
-            this.lbl_blok.Size = new System.Drawing.Size(40, 16);
-            this.lbl_blok.TabIndex = 8;
-            this.lbl_blok.Text = "Blok :";
-            // 
-            // cmb_blok
-            // 
-            this.cmb_blok.FormattingEnabled = true;
-            this.cmb_blok.Items.AddRange(new object[] {
-            "A Blok",
-            "B Blok",
-            "C Blok"});
-            this.cmb_blok.Location = new System.Drawing.Point(138, 164);
-            this.cmb_blok.Name = "cmb_blok";
-            this.cmb_blok.Size = new System.Drawing.Size(121, 24);
-            this.cmb_blok.TabIndex = 9;
             // 
             // AnaSayfaForm
             // 
