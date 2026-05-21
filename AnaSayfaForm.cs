@@ -96,16 +96,16 @@ namespace Otomasyon_Projesi
             }
         }
 
-       
+
 
         private void dgw_ogrenciler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-               
+
                 txt_tc.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_TC_No"].Value.ToString();
-                txt_isim.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Ad"].Value.ToString();        
-                txt_soyisim.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Soyad"].Value.ToString();    
+                txt_isim.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Ad"].Value.ToString();
+                txt_soyisim.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Soyad"].Value.ToString();
                 txt_oda.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Kat"].Value.ToString();
                 cmb_blok.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Blok"].Value.ToString();
             }
@@ -129,13 +129,13 @@ namespace Otomasyon_Projesi
                         }
                         string yeniSifre = txt_tc.Text.Substring(txt_tc.Text.Length - 4);
 
-                        
+
                         ogrenci.Ogrenci_TC_No = txt_tc.Text;
-                        ogrenci.Ogrenci_Ad = txt_isim.Text;              
-                        ogrenci.Ogrenci_Soyad = txt_soyisim.Text;        
-                        ogrenci.Ogrenci_Blok = cmb_blok.Text;            
-                        ogrenci.Ogrenci_Kat = Convert.ToInt32(txt_oda.Text); 
-                        ogrenci.Ogrenci_Sifre = yeniSifre;               
+                        ogrenci.Ogrenci_Ad = txt_isim.Text;
+                        ogrenci.Ogrenci_Soyad = txt_soyisim.Text;
+                        ogrenci.Ogrenci_Blok = cmb_blok.Text;
+                        ogrenci.Ogrenci_Kat = Convert.ToInt32(txt_oda.Text);
+                        ogrenci.Ogrenci_Sifre = yeniSifre;
 
                         db.SaveChanges();
 
@@ -152,7 +152,50 @@ namespace Otomasyon_Projesi
                 MessageBox.Show($"Hata = {ex.Message}");
             }
         }
+
+        private void btn_sil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult sonuc = MessageBox.Show(
+                            "Silmek istediğinize emin misiniz?",
+                            "Silme Onayı",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question
+                        );
+                if (sonuc == DialogResult.Yes)
+                {
+                    if (dgw_ogrenciler.CurrentRow != null)
+                    {
+                        int selectedId = Convert.ToInt32(dgw_ogrenciler.CurrentRow.Cells["Ogrenci_Id"].Value);
+                        Ogrenci ogrenci = db.Ogrenciler.Find(selectedId);
+                        if (ogrenci != null)
+                        {
+                            db.Ogrenciler.Remove(ogrenci);
+                            db.SaveChanges();
+
+                            MessageBox.Show("Öğrenci Kaydı Sistemden Tamamen Silindi!",
+                                            "Sistem Bildirimi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            btn_listele.PerformClick();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lütfen silmek istediğiniz öğrenciyi tablodan seçiniz!");
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"Hata = {ex.Message}");
+            }
+        }
     }
-    }
+}
+        
+    
+    
 
             
