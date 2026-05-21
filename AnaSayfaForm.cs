@@ -45,5 +45,42 @@ namespace Otomasyon_Projesi
             }
 
         }
+
+        private void btn_ekle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (string.IsNullOrEmpty(txt_tc.Text) || txt_tc.Text.Length != 11)
+                {
+                    MessageBox.Show("Lütfen tam 11 haneli geçerli bir T.C. Kimlik Numarası giriniz!");
+                    return;
+                }
+
+                string otomatikSifre = txt_tc.Text.Substring(txt_tc.Text.Length - 4);
+
+                Ogrenci newOgrenci = new Ogrenci()
+                {
+                    Ogrenci_TC_No = txt_tc.Text,
+                    Ogrenci_Ad = txt_isim.Text,
+                    Ogrenci_Soyad = txt_soyisim.Text,
+                    Ogrenci_Blok = cmb_blok.Text,                       
+                    Ogrenci_Kat = Convert.ToInt32(txt_oda.Text),
+                    Ogrenci_Sifre = "1234"
+                };
+
+                db.Ogrenciler.Add(newOgrenci);
+                db.SaveChanges();
+
+                MessageBox.Show("Öğrenci Kaydı Başarıyla Tamamlandı!");
+                btn_listele_Click(sender, e);
+
+            }
+            catch (Exception ex )
+            {
+
+                MessageBox.Show($"Hata = {ex.Message}");
+            }
+        }
     }
 }
