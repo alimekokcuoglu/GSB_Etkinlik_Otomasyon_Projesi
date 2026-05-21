@@ -44,6 +44,7 @@
             this.btn_listele = new System.Windows.Forms.Button();
             this.btn_sil = new System.Windows.Forms.Button();
             this.btn_guncelle = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ogrenciler)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -204,11 +205,22 @@
             this.btn_guncelle.UseVisualStyleBackColor = true;
             this.btn_guncelle.Click += new System.EventHandler(this.btn_guncelle_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(588, 277);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 200);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
             // AnaSayfaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 504);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_guncelle);
             this.Controls.Add(this.btn_sil);
             this.Controls.Add(this.btn_listele);
@@ -242,5 +254,6 @@
         private System.Windows.Forms.Button btn_guncelle;
         private System.Windows.Forms.Label lbl_blok;
         private System.Windows.Forms.ComboBox cmb_blok;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

@@ -192,6 +192,11 @@ namespace Otomasyon_Projesi
                 MessageBox.Show($"Hata = {ex.Message}");
             }
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
         

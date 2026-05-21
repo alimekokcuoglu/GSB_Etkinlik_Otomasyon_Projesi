@@ -63,6 +63,12 @@
       <DependentUpon>AnaSayfaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Etkinlik.cs" />
+    <Compile Include="Form_Kayitlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Kayitlar.Designer.cs">
+      <DependentUpon>Form_Kayitlar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kayitlar.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
