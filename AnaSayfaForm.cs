@@ -110,6 +110,48 @@ namespace Otomasyon_Projesi
                 cmb_blok.Text = dgw_ogrenciler.Rows[e.RowIndex].Cells["Ogrenci_Blok"].Value.ToString();
             }
         }
+
+        private void btn_guncelle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgw_ogrenciler.CurrentRow != null)
+                {
+                    int selectedId = Convert.ToInt32(dgw_ogrenciler.CurrentRow.Cells["Ogrenci_Id"].Value);
+                    Ogrenci ogrenci = db.Ogrenciler.Find(selectedId);
+
+                    if (ogrenci != null)
+                    {
+                        if (string.IsNullOrEmpty(txt_tc.Text) || txt_tc.Text.Length != 11)
+                        {
+                            MessageBox.Show("Lütfen tam 11 haneli geçerli bir T.C. Kimlik Numarası giriniz!");
+                            return;
+                        }
+                        string yeniSifre = txt_tc.Text.Substring(txt_tc.Text.Length - 4);
+
+                        
+                        ogrenci.Ogrenci_TC_No = txt_tc.Text;
+                        ogrenci.Ogrenci_Ad = txt_isim.Text;              
+                        ogrenci.Ogrenci_Soyad = txt_soyisim.Text;        
+                        ogrenci.Ogrenci_Blok = cmb_blok.Text;            
+                        ogrenci.Ogrenci_Kat = Convert.ToInt32(txt_oda.Text); 
+                        ogrenci.Ogrenci_Sifre = yeniSifre;               
+
+                        db.SaveChanges();
+
+                        MessageBox.Show("Öğrenci Bilgileri Başarıyla Güncellendi!",
+                                        "Sistem Bildirimi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        btn_listele.PerformClick();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"Hata = {ex.Message}");
+            }
+        }
     }
     }
 

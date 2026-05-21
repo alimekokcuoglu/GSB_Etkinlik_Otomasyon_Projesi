@@ -201,6 +201,7 @@
             this.btn_guncelle.TabIndex = 5;
             this.btn_guncelle.Text = "GÜNCELLE";
             this.btn_guncelle.UseVisualStyleBackColor = true;
+            this.btn_guncelle.Click += new System.EventHandler(this.btn_guncelle_Click);
             // 
             // AnaSayfaForm
             // 
