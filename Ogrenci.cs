@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Otomasyon_Projesi;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace Otomasyon_Projesi
@@ -37,7 +38,9 @@ namespace Otomasyon_Projesi
 
         [Required]
         public int Ogrenci_Kat { get; set; }
+
+        public virtual ICollection<Kayitlar> Kayitlari { get; set; }
     }
 }
-    
+
 

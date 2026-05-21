@@ -62,12 +62,15 @@
     <Compile Include="AnaSayfaForm.Designer.cs">
       <DependentUpon>AnaSayfaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Etkinlik.cs" />
+    <Compile Include="Kayitlar.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Memur.cs" />
     <Compile Include="Ogrenci.cs" />
     <Compile Include="OgrenciDbContext.cs" />
     <Compile Include="Program.cs" />

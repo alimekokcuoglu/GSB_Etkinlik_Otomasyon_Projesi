@@ -14,7 +14,9 @@ namespace Otomasyon_Projesi
         {
         }
 
-        
         public DbSet<Ogrenci> Ogrenciler { get; set; }
+        public DbSet<Memur> Memurlar { get; set; }
+        public DbSet<Etkinlik> Etkinlikler { get; set; }
+        public DbSet<Kayitlar> Kayitlari { get; set; }
     }
 }
