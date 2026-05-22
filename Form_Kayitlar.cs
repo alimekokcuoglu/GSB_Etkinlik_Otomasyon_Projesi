@@ -42,14 +42,14 @@ namespace Otomasyon_Projesi
                 dgw_kayitlar.DataSource = list;
                 dgw_kayitlar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgw_kayitlar.Columns[0].Visible = false;
-            
+
+
             }
 
             catch (Exception ex)
             {
 
-                MessageBox.Show($"Hata= {ex.Message}");
-
+                MessageBox.Show("Listeleme sırasında bir hata oluştu: " + ex.Message);
                 {
 
 
@@ -65,13 +65,50 @@ namespace Otomasyon_Projesi
 
         private void Form_Kayitlar_Load(object sender, EventArgs e)
         {
-            btn_kayit_listele_Click(sender, e);
 
-            
-            dgw_kayitlar.AllowUserToAddRows = false;
+            try
+            {
 
-            
-            dgw_kayitlar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                cmb_ogrenciler.DataSource = db.Ogrenciler
+                    .OrderBy(o => o.Ogrenci_Ad)
+                    .Select(o => new
+                    {
+                        Ogrenci_Id = o.Ogrenci_Id,
+                        AdSoyad = o.Ogrenci_Ad + " " + o.Ogrenci_Soyad
+                    })
+                    .ToList();
+                cmb_ogrenciler.DisplayMember = "AdSoyad";
+                cmb_ogrenciler.ValueMember = "Ogrenci_Id";
+
+
+                cmb_etkinlikler.DataSource = db.Etkinlikler
+                    .OrderBy(etkinlik => etkinlik.Etkinlik_Adi) 
+                    .Select(etkinlik => new
+    {
+                        etkinlik.Etkinlik_Id,
+                        EtkinlikBilgi = etkinlik.Etkinlik_Adi
+                    })
+                    .ToList();
+                cmb_etkinlikler.DisplayMember = "EtkinlikBilgi";
+                cmb_etkinlikler.ValueMember = "Etkinlik_Id";
+
+
+                btn_kayit_listele.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Yükleme Hatası: " + ex.Message);
+                btn_kayit_listele_Click(sender, e);
+
+
+                dgw_kayitlar.AllowUserToAddRows = false;
+
+
+                dgw_kayitlar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
+
+            }
         }
     }
 }

@@ -74,7 +74,7 @@
             // cmb_ogrenciler
             // 
             this.cmb_ogrenciler.FormattingEnabled = true;
-            this.cmb_ogrenciler.Location = new System.Drawing.Point(140, 100);
+            this.cmb_ogrenciler.Location = new System.Drawing.Point(140, 56);
             this.cmb_ogrenciler.Name = "cmb_ogrenciler";
             this.cmb_ogrenciler.Size = new System.Drawing.Size(190, 24);
             this.cmb_ogrenciler.TabIndex = 3;
@@ -82,7 +82,7 @@
             // cmb_etkinlikler
             // 
             this.cmb_etkinlikler.FormattingEnabled = true;
-            this.cmb_etkinlikler.Location = new System.Drawing.Point(140, 53);
+            this.cmb_etkinlikler.Location = new System.Drawing.Point(140, 103);
             this.cmb_etkinlikler.Name = "cmb_etkinlikler";
             this.cmb_etkinlikler.Size = new System.Drawing.Size(190, 24);
             this.cmb_etkinlikler.TabIndex = 4;
