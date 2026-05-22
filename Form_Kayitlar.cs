@@ -216,19 +216,81 @@ namespace Otomasyon_Projesi
                 MessageBox.Show("Hata = " + ex.Message);
             }
         }
+
+        private void rd_1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                if (rd_1.Checked)
+                {
+
+                    var result = db.Kayitlari
+                        .GroupBy(k => new
+                        {
+                            k.Ogrenci.Ogrenci_Id,
+                            k.Ogrenci.Ogrenci_Ad,
+                            k.Ogrenci.Ogrenci_Soyad
+                        })
+                        .Select(g => new
+                        {
+                            FullName = g.Key.Ogrenci_Ad + " " + g.Key.Ogrenci_Soyad,
+                            TotalCount = g.Count()
+                        })
+                        .OrderByDescending(x => x.TotalCount)
+                        .FirstOrDefault();
+
+                    if (result != null)
+                    {
+                        lbl_1.Text = $"{result.FullName}, toplam {result.TotalCount} etkinlik almış.";
+                    }
+                    else
+                    {
+                        lbl_1.Text = "Kayıt bulunamadı.";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata = {ex.Message}");
+            }
+        }
+
+        private void rd_2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rd_2.Checked)
+            {
+                try
+                {
+
+                    var result = db.Kayitlari
+                        .GroupBy(k => k.Etkinlik.Etkinlik_Adi)
+                        .Select(g => new
+                        {
+                            EtkinlikAd = g.Key,
+                            KayitSayisi = g.Count()
+                        })
+                        .OrderByDescending(x => x.KayitSayisi)
+                        .FirstOrDefault();
+
+                    if (result != null)
+                    {
+                        lbl_2.Text = $"En popüler etkinlik: {result.EtkinlikAd} ({result.KayitSayisi} kişi katılmış)";
+                    }
+                    else
+                    {
+                        lbl_2.Text = "Kayıt bulunamadı.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Hata = {ex.Message}");
+                }
+            }
+        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

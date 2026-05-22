@@ -38,18 +38,24 @@
             this.btn_kayit_sil = new System.Windows.Forms.Button();
             this.groupBox_yeni_kayit = new System.Windows.Forms.GroupBox();
             this.btn_ana_form = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rd_1 = new System.Windows.Forms.RadioButton();
+            this.rd_2 = new System.Windows.Forms.RadioButton();
+            this.lbl_1 = new System.Windows.Forms.Label();
+            this.lbl_2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_kayitlar)).BeginInit();
             this.groupBox_yeni_kayit.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgw_kayitlar
             // 
             this.dgw_kayitlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw_kayitlar.Location = new System.Drawing.Point(12, 12);
+            this.dgw_kayitlar.Location = new System.Drawing.Point(12, 3);
             this.dgw_kayitlar.Name = "dgw_kayitlar";
             this.dgw_kayitlar.RowHeadersWidth = 51;
             this.dgw_kayitlar.RowTemplate.Height = 24;
-            this.dgw_kayitlar.Size = new System.Drawing.Size(696, 154);
+            this.dgw_kayitlar.Size = new System.Drawing.Size(776, 163);
             this.dgw_kayitlar.TabIndex = 0;
             this.dgw_kayitlar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_kayitlar_CellContentClick);
             // 
@@ -133,18 +139,74 @@
             // 
             // btn_ana_form
             // 
-            this.btn_ana_form.Location = new System.Drawing.Point(623, 279);
+            this.btn_ana_form.Location = new System.Drawing.Point(661, 181);
             this.btn_ana_form.Name = "btn_ana_form";
-            this.btn_ana_form.Size = new System.Drawing.Size(125, 111);
+            this.btn_ana_form.Size = new System.Drawing.Size(98, 87);
             this.btn_ana_form.TabIndex = 9;
             this.btn_ana_form.Text = "ANA FORM";
             this.btn_ana_form.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbl_2);
+            this.groupBox1.Controls.Add(this.lbl_1);
+            this.groupBox1.Controls.Add(this.rd_2);
+            this.groupBox1.Controls.Add(this.rd_1);
+            this.groupBox1.Location = new System.Drawing.Point(479, 290);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(334, 132);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // rd_1
+            // 
+            this.rd_1.AutoSize = true;
+            this.rd_1.Location = new System.Drawing.Point(6, 32);
+            this.rd_1.Name = "rd_1";
+            this.rd_1.Size = new System.Drawing.Size(103, 20);
+            this.rd_1.TabIndex = 0;
+            this.rd_1.TabStop = true;
+            this.rd_1.Text = "radioButton1";
+            this.rd_1.UseVisualStyleBackColor = true;
+            this.rd_1.CheckedChanged += new System.EventHandler(this.rd_1_CheckedChanged);
+            // 
+            // rd_2
+            // 
+            this.rd_2.AutoSize = true;
+            this.rd_2.Location = new System.Drawing.Point(6, 58);
+            this.rd_2.Name = "rd_2";
+            this.rd_2.Size = new System.Drawing.Size(103, 20);
+            this.rd_2.TabIndex = 1;
+            this.rd_2.TabStop = true;
+            this.rd_2.Text = "radioButton2";
+            this.rd_2.UseVisualStyleBackColor = true;
+            this.rd_2.CheckedChanged += new System.EventHandler(this.rd_2_CheckedChanged);
+            // 
+            // lbl_1
+            // 
+            this.lbl_1.AutoSize = true;
+            this.lbl_1.Location = new System.Drawing.Point(141, 32);
+            this.lbl_1.Name = "lbl_1";
+            this.lbl_1.Size = new System.Drawing.Size(44, 16);
+            this.lbl_1.TabIndex = 2;
+            this.lbl_1.Text = "label1";
+            // 
+            // lbl_2
+            // 
+            this.lbl_2.AutoSize = true;
+            this.lbl_2.Location = new System.Drawing.Point(141, 62);
+            this.lbl_2.Name = "lbl_2";
+            this.lbl_2.Size = new System.Drawing.Size(44, 16);
+            this.lbl_2.TabIndex = 3;
+            this.lbl_2.Text = "label2";
             // 
             // Form_Kayitlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_ana_form);
             this.Controls.Add(this.groupBox_yeni_kayit);
             this.Controls.Add(this.btn_kayit_sil);
@@ -156,6 +218,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgw_kayitlar)).EndInit();
             this.groupBox_yeni_kayit.ResumeLayout(false);
             this.groupBox_yeni_kayit.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +236,10 @@
         private System.Windows.Forms.Button btn_kayit_sil;
         private System.Windows.Forms.GroupBox groupBox_yeni_kayit;
         private System.Windows.Forms.Button btn_ana_form;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbl_2;
+        private System.Windows.Forms.Label lbl_1;
+        private System.Windows.Forms.RadioButton rd_2;
+        private System.Windows.Forms.RadioButton rd_1;
     }
 }
