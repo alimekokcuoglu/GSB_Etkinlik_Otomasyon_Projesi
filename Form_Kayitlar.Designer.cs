@@ -115,6 +115,7 @@
             this.btn_kayit_sil.TabIndex = 7;
             this.btn_kayit_sil.Text = "SİL";
             this.btn_kayit_sil.UseVisualStyleBackColor = true;
+            this.btn_kayit_sil.Click += new System.EventHandler(this.btn_kayit_sil_Click);
             // 
             // groupBox_yeni_kayit
             // 

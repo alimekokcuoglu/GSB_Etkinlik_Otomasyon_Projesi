@@ -36,7 +36,7 @@ namespace Otomasyon_Projesi
             OgrenciSoyad = k.Ogrenci.Ogrenci_Soyad,
             EtkinlikAdı = k.Etkinlik.Etkinlik_Adi,
             EtkinlikYeri = k.Etkinlik.Etkinlik_Yeri,
-           
+
             MemurAdSoyad = k.Etkinlik.Memur.Memur_Ad_Soyad,
 
             Tarih = k.Kayit_Tarihi
@@ -59,6 +59,32 @@ namespace Otomasyon_Projesi
 
 
                 }
+            }
+        }
+
+        private void KayitlariListele()
+        {
+
+            var list = db.Kayitlari
+                .Include(k => k.Ogrenci)
+                .Include(k => k.Etkinlik)
+                .Select(k => new
+                {
+                    Kayit_Id = k.Kayit_Id,
+                    OgrenciAd = k.Ogrenci.Ogrenci_Ad,
+                    OgrenciSoyad = k.Ogrenci.Ogrenci_Soyad,
+                    EtkinlikAdi = k.Etkinlik.Etkinlik_Adi,
+                    EtkinlikYeri = k.Etkinlik.Etkinlik_Yeri,
+                    MemurAdSoyad = k.Etkinlik.Memur.Memur_Ad_Soyad,
+                    Tarih = k.Kayit_Tarihi
+                })
+                .ToList();
+
+            dgw_kayitlar.DataSource = list;
+            if (dgw_kayitlar.Columns.Count > 0)
+
+            {
+                dgw_kayitlar.Columns[0].Visible = false;
             }
         }
 
@@ -90,7 +116,7 @@ namespace Otomasyon_Projesi
                 .OrderBy(etkinlik => etkinlik.Etkinlik_Adi)
                 .Select(etkinlik => new
                 {
-                 etkinlik.Etkinlik_Id,
+                    etkinlik.Etkinlik_Id,
 
                     EtkinlikBilgi = etkinlik.Etkinlik_Adi + " | Yer: " + etkinlik.Etkinlik_Yeri + " | Memur: " + etkinlik.Memur.Memur_Ad_Soyad
                 })
@@ -126,21 +152,21 @@ namespace Otomasyon_Projesi
                 int secilenOgrenciId = (int)cmb_ogrenciler.SelectedValue;
                 int secilenEtkinlikId = (int)cmb_etkinlikler.SelectedValue;
 
-                // 2. Yeni bir Kayitlari nesnesi oluşturuyoruz
+
                 Kayitlar yeniKayit = new Kayitlar
                 {
                     Ogrenci_Id = secilenOgrenciId,
                     Etkinlik_Id = secilenEtkinlikId,
-                    Kayit_Tarihi = DateTime.Now // Tarihi otomatik alıyoruz
+                    Kayit_Tarihi = DateTime.Now
                 };
 
-                // 3. Kayitlari tablosuna ekliyoruz
+
                 db.Kayitlari.Add(yeniKayit);
                 db.SaveChanges();
 
                 MessageBox.Show("Kayıt başarıyla eklendi.");
 
-                // 4. Listenin güncellenmesi için Listele butonunu tetikliyoruz
+
                 btn_kayit_listele.PerformClick();
             }
             catch (Exception ex)
@@ -149,6 +175,75 @@ namespace Otomasyon_Projesi
                 MessageBox.Show("Hata = " + ex.Message);
             }
         }
+
+        private void btn_kayit_sil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DialogResult sonuc = MessageBox.Show("Silmek istediğinize emin misiniz?",
+                                                      "Silme Onayı",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+
+                if (sonuc == DialogResult.Yes)
+                {
+
+                    if (dgw_kayitlar.CurrentRow != null)
+                    {
+
+                        int selectedId = Convert.ToInt32(dgw_kayitlar.CurrentRow.Cells["Kayıt_Id"].Value);
+                        var recordToDelete = db.Kayitlari.Find(selectedId);
+
+                        if (recordToDelete != null)
+                        {
+                            db.Kayitlari.Remove(recordToDelete);
+                            db.SaveChanges();
+                            MessageBox.Show("Kayıt başarıyla silindi.");
+
+
+                            KayitlariListele();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Kayıt bulunamadı.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata = " + ex.Message);
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
