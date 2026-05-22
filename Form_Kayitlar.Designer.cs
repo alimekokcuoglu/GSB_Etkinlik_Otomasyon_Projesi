@@ -51,6 +51,7 @@
             this.dgw_kayitlar.RowTemplate.Height = 24;
             this.dgw_kayitlar.Size = new System.Drawing.Size(696, 154);
             this.dgw_kayitlar.TabIndex = 0;
+            this.dgw_kayitlar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_kayitlar_CellContentClick);
             // 
             // lbl_ogrenci_sec
             // 
@@ -97,18 +98,19 @@
             // 
             // btn_kayit_listele
             // 
-            this.btn_kayit_listele.Location = new System.Drawing.Point(579, 232);
+            this.btn_kayit_listele.Location = new System.Drawing.Point(222, 181);
             this.btn_kayit_listele.Name = "btn_kayit_listele";
-            this.btn_kayit_listele.Size = new System.Drawing.Size(75, 23);
+            this.btn_kayit_listele.Size = new System.Drawing.Size(116, 23);
             this.btn_kayit_listele.TabIndex = 6;
             this.btn_kayit_listele.Text = "LİSTELE";
             this.btn_kayit_listele.UseVisualStyleBackColor = true;
+            this.btn_kayit_listele.Click += new System.EventHandler(this.btn_kayit_listele_Click);
             // 
             // btn_kayit_sil
             // 
-            this.btn_kayit_sil.Location = new System.Drawing.Point(579, 296);
+            this.btn_kayit_sil.Location = new System.Drawing.Point(398, 181);
             this.btn_kayit_sil.Name = "btn_kayit_sil";
-            this.btn_kayit_sil.Size = new System.Drawing.Size(75, 23);
+            this.btn_kayit_sil.Size = new System.Drawing.Size(103, 23);
             this.btn_kayit_sil.TabIndex = 7;
             this.btn_kayit_sil.Text = "SİL";
             this.btn_kayit_sil.UseVisualStyleBackColor = true;
@@ -129,9 +131,9 @@
             // 
             // btn_ana_form
             // 
-            this.btn_ana_form.Location = new System.Drawing.Point(694, 364);
+            this.btn_ana_form.Location = new System.Drawing.Point(623, 279);
             this.btn_ana_form.Name = "btn_ana_form";
-            this.btn_ana_form.Size = new System.Drawing.Size(75, 58);
+            this.btn_ana_form.Size = new System.Drawing.Size(125, 111);
             this.btn_ana_form.TabIndex = 9;
             this.btn_ana_form.Text = "ANA FORM";
             this.btn_ana_form.UseVisualStyleBackColor = true;
@@ -148,6 +150,7 @@
             this.Controls.Add(this.dgw_kayitlar);
             this.Name = "Form_Kayitlar";
             this.Text = "Form_Kayitlar";
+            this.Load += new System.EventHandler(this.Form_Kayitlar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_kayitlar)).EndInit();
             this.groupBox_yeni_kayit.ResumeLayout(false);
             this.groupBox_yeni_kayit.PerformLayout();

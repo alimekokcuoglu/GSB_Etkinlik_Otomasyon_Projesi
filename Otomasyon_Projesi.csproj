@@ -84,6 +84,9 @@
     <EmbeddedResource Include="AnaSayfaForm.resx">
       <DependentUpon>AnaSayfaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Kayitlar.resx">
+      <DependentUpon>Form_Kayitlar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

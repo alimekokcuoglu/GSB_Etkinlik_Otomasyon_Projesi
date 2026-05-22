@@ -26,3 +26,4 @@ C:\Users\PC\OneDrive\Desktop\GSB_Etkinlik_Otomasyon_Projesi\obj\Debug\Otomasyon_
 C:\Users\PC\OneDrive\Desktop\GSB_Etkinlik_Otomasyon_Projesi\obj\Debug\Otomasyo.75838621.Up2Date
 C:\Users\PC\OneDrive\Desktop\GSB_Etkinlik_Otomasyon_Projesi\obj\Debug\Otomasyon_Projesi.exe
 C:\Users\PC\OneDrive\Desktop\GSB_Etkinlik_Otomasyon_Projesi\obj\Debug\Otomasyon_Projesi.pdb
+C:\Users\PC\OneDrive\Desktop\GSB_Etkinlik_Otomasyon_Projesi\obj\Debug\Otomasyon_Projesi.Form_Kayitlar.resources

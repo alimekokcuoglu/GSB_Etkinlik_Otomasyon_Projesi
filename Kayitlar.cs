@@ -12,14 +12,12 @@ namespace Otomasyon_Projesi
     internal class Kayitlar
     {
         [Key]
-        public int Kayit_Id { get; set; } 
+        public int Kayit_Id { get; set; }
+        public int Ogrenci_Id { get; set; }
+        public int Etkinlik_Id { get; set; }
+        public DateTime Kayit_Tarihi { get; set; } 
 
-        public int Ogrenci_Id { get; set; } 
-        public int Etkinlik_Id { get; set; } 
-        public DateTime Kayit_Tarihi { get; set; }
-
-
-        public virtual Ogrenci Ogrenci { get; set; }
+        public virtual Ogrenci Ogrenci { get; set; } 
         public virtual Etkinlik Etkinlik { get; set; }
     }
 }
