@@ -95,6 +95,7 @@
             this.btn_kayit_ekle.TabIndex = 5;
             this.btn_kayit_ekle.Text = "EKLE";
             this.btn_kayit_ekle.UseVisualStyleBackColor = true;
+            this.btn_kayit_ekle.Click += new System.EventHandler(this.btn_kayit_ekle_Click);
             // 
             // btn_kayit_listele
             // 

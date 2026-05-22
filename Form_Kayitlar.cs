@@ -35,6 +35,10 @@ namespace Otomasyon_Projesi
             OgrenciAd = k.Ogrenci.Ogrenci_Ad,
             OgrenciSoyad = k.Ogrenci.Ogrenci_Soyad,
             EtkinlikAdı = k.Etkinlik.Etkinlik_Adi,
+            EtkinlikYeri = k.Etkinlik.Etkinlik_Yeri,
+           
+            MemurAdSoyad = k.Etkinlik.Memur.Memur_Ad_Soyad,
+
             Tarih = k.Kayit_Tarihi
         })
         .ToList();
@@ -82,15 +86,19 @@ namespace Otomasyon_Projesi
 
 
                 cmb_etkinlikler.DataSource = db.Etkinlikler
-                    .OrderBy(etkinlik => etkinlik.Etkinlik_Adi) 
-                    .Select(etkinlik => new
-    {
-                        etkinlik.Etkinlik_Id,
-                        EtkinlikBilgi = etkinlik.Etkinlik_Adi
-                    })
-                    .ToList();
+                .Include(etkinlik => etkinlik.Memur)
+                .OrderBy(etkinlik => etkinlik.Etkinlik_Adi)
+                .Select(etkinlik => new
+                {
+                 etkinlik.Etkinlik_Id,
+
+                    EtkinlikBilgi = etkinlik.Etkinlik_Adi + " | Yer: " + etkinlik.Etkinlik_Yeri + " | Memur: " + etkinlik.Memur.Memur_Ad_Soyad
+                })
+                 .ToList();
+
                 cmb_etkinlikler.DisplayMember = "EtkinlikBilgi";
                 cmb_etkinlikler.ValueMember = "Etkinlik_Id";
+
 
 
                 btn_kayit_listele.PerformClick();
@@ -108,6 +116,37 @@ namespace Otomasyon_Projesi
 
 
 
+            }
+        }
+
+        private void btn_kayit_ekle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int secilenOgrenciId = (int)cmb_ogrenciler.SelectedValue;
+                int secilenEtkinlikId = (int)cmb_etkinlikler.SelectedValue;
+
+                // 2. Yeni bir Kayitlari nesnesi oluşturuyoruz
+                Kayitlar yeniKayit = new Kayitlar
+                {
+                    Ogrenci_Id = secilenOgrenciId,
+                    Etkinlik_Id = secilenEtkinlikId,
+                    Kayit_Tarihi = DateTime.Now // Tarihi otomatik alıyoruz
+                };
+
+                // 3. Kayitlari tablosuna ekliyoruz
+                db.Kayitlari.Add(yeniKayit);
+                db.SaveChanges();
+
+                MessageBox.Show("Kayıt başarıyla eklendi.");
+
+                // 4. Listenin güncellenmesi için Listele butonunu tetikliyoruz
+                btn_kayit_listele.PerformClick();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hata = " + ex.Message);
             }
         }
     }
