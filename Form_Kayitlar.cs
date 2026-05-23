@@ -127,7 +127,7 @@ namespace Otomasyon_Projesi
 
 
 
-                btn_kayit_listele.PerformClick();
+                
             }
             catch (Exception ex)
             {

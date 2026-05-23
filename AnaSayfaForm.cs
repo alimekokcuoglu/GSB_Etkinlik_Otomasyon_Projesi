@@ -38,8 +38,14 @@ namespace Otomasyon_Projesi
 
                 dgw_ogrenciler.Columns["Ogrenci_Id"].Visible = false;
 
+                if (dgw_ogrenciler.Columns["Kayitlari"] != null)
+                {
+                    dgw_ogrenciler.Columns["Kayitlari"].Visible = false;
+                }
+
                 dgw_ogrenciler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
+
             catch (Exception ex)
             {
 
@@ -200,6 +206,41 @@ namespace Otomasyon_Projesi
             form_kayit.ShowDialog();
 
             this.Close();
+        }
+
+        private void txt_soyisim_TextChanged(object sender, EventArgs e)
+        {
+            int selectionStart = txt_soyisim.SelectionStart;
+
+           
+            txt_soyisim.Text = txt_soyisim.Text.ToUpper();
+
+           
+            txt_soyisim.SelectionStart = selectionStart;
+        
+    }
+
+        private void txt_isim_TextChanged(object sender, EventArgs e)
+        {
+            int selectionStart = txt_isim.SelectionStart;
+
+           
+            System.Globalization.TextInfo textInfo = new System.Globalization.CultureInfo("tr-TR", false).TextInfo;
+            txt_isim.Text = textInfo.ToTitleCase(txt_isim.Text.ToLower());
+
+            
+            txt_isim.SelectionStart = selectionStart;
+        }
+
+        private void AnaSayfaForm_Load(object sender, EventArgs e)
+        {
+            
+
+           
+            if (dgw_ogrenciler.Columns["Kayitlari"] != null)
+            {
+                dgw_ogrenciler.Columns["Kayitlari"].Visible = false;
+            }
         }
     }
     }

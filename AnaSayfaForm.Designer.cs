@@ -123,6 +123,7 @@
             this.txt_soyisim.Name = "txt_soyisim";
             this.txt_soyisim.Size = new System.Drawing.Size(100, 22);
             this.txt_soyisim.TabIndex = 5;
+            this.txt_soyisim.TextChanged += new System.EventHandler(this.txt_soyisim_TextChanged);
             // 
             // txt_isim
             // 
@@ -130,6 +131,7 @@
             this.txt_isim.Name = "txt_isim";
             this.txt_isim.Size = new System.Drawing.Size(100, 22);
             this.txt_isim.TabIndex = 4;
+            this.txt_isim.TextChanged += new System.EventHandler(this.txt_isim_TextChanged);
             // 
             // lbl_oda
             // 
@@ -241,6 +243,7 @@
             this.Controls.Add(this.dgw_ogrenciler);
             this.Name = "AnaSayfaForm";
             this.Text = "AnaSayfaForm";
+            this.Load += new System.EventHandler(this.AnaSayfaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ogrenciler)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
