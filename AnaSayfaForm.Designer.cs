@@ -61,6 +61,7 @@
             this.dgw_ogrenciler.Size = new System.Drawing.Size(776, 191);
             this.dgw_ogrenciler.TabIndex = 0;
             this.dgw_ogrenciler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_ogrenciler_CellClick);
+            this.dgw_ogrenciler.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_ogrenciler_CellContentClick);
             // 
             // groupBox1
             // 

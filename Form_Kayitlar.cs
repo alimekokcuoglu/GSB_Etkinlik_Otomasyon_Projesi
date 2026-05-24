@@ -127,7 +127,7 @@ namespace Otomasyon_Projesi
 
 
 
-                
+               
             }
             catch (Exception ex)
             {

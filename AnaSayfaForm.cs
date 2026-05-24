@@ -135,6 +135,8 @@ namespace Otomasyon_Projesi
                         }
                         string yeniSifre = txt_tc.Text.Substring(txt_tc.Text.Length - 4);
 
+                        string eskiSifre = ogrenci.Ogrenci_Sifre;
+
 
                         ogrenci.Ogrenci_TC_No = txt_tc.Text;
                         ogrenci.Ogrenci_Ad = txt_isim.Text;
@@ -145,8 +147,17 @@ namespace Otomasyon_Projesi
 
                         db.SaveChanges();
 
-                        MessageBox.Show("Öğrenci Bilgileri Başarıyla Güncellendi!",
-                                        "Sistem Bildirimi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (eskiSifre != ogrenci.Ogrenci_Sifre)
+                        {
+                            MessageBox.Show("Öğrenci bilgileri başarıyla güncellendi!\n\n" +
+                                            "Şifreniz değişti, yeni şifreniz: " + ogrenci.Ogrenci_Sifre,
+                                            "Sistem Bildirimi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Öğrenci bilgileri başarıyla güncellendi.",
+                                            "Sistem Bildirimi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
 
                         btn_listele.PerformClick();
                     }
@@ -155,7 +166,8 @@ namespace Otomasyon_Projesi
             catch (Exception ex)
             {
 
-                MessageBox.Show($"Hata = {ex.Message}");
+                MessageBox.Show("Güncelleme işlemi sırasında beklenmedik bir hata oluştu. Lütfen bilgileri kontrol edip tekrar deneyin.",
+                                "İşlem Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -241,6 +253,11 @@ namespace Otomasyon_Projesi
             {
                 dgw_ogrenciler.Columns["Kayitlari"].Visible = false;
             }
+        }
+
+        private void dgw_ogrenciler_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     }
