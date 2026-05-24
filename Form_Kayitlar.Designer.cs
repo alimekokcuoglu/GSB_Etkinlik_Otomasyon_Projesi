@@ -39,10 +39,10 @@
             this.groupBox_yeni_kayit = new System.Windows.Forms.GroupBox();
             this.btn_ana_form = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rd_1 = new System.Windows.Forms.RadioButton();
-            this.rd_2 = new System.Windows.Forms.RadioButton();
-            this.lbl_1 = new System.Windows.Forms.Label();
             this.lbl_2 = new System.Windows.Forms.Label();
+            this.lbl_1 = new System.Windows.Forms.Label();
+            this.rd_2 = new System.Windows.Forms.RadioButton();
+            this.rd_1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_kayitlar)).BeginInit();
             this.groupBox_yeni_kayit.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -145,6 +145,7 @@
             this.btn_ana_form.TabIndex = 9;
             this.btn_ana_form.Text = "ANA FORM";
             this.btn_ana_form.UseVisualStyleBackColor = true;
+            this.btn_ana_form.Click += new System.EventHandler(this.btn_ana_form_Click);
             // 
             // groupBox1
             // 
@@ -159,17 +160,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // rd_1
+            // lbl_2
             // 
-            this.rd_1.AutoSize = true;
-            this.rd_1.Location = new System.Drawing.Point(6, 32);
-            this.rd_1.Name = "rd_1";
-            this.rd_1.Size = new System.Drawing.Size(103, 20);
-            this.rd_1.TabIndex = 0;
-            this.rd_1.TabStop = true;
-            this.rd_1.Text = "radioButton1";
-            this.rd_1.UseVisualStyleBackColor = true;
-            this.rd_1.CheckedChanged += new System.EventHandler(this.rd_1_CheckedChanged);
+            this.lbl_2.AutoSize = true;
+            this.lbl_2.Location = new System.Drawing.Point(141, 62);
+            this.lbl_2.Name = "lbl_2";
+            this.lbl_2.Size = new System.Drawing.Size(44, 16);
+            this.lbl_2.TabIndex = 3;
+            this.lbl_2.Text = "label2";
+            // 
+            // lbl_1
+            // 
+            this.lbl_1.AutoSize = true;
+            this.lbl_1.Location = new System.Drawing.Point(141, 32);
+            this.lbl_1.Name = "lbl_1";
+            this.lbl_1.Size = new System.Drawing.Size(44, 16);
+            this.lbl_1.TabIndex = 2;
+            this.lbl_1.Text = "label1";
             // 
             // rd_2
             // 
@@ -183,23 +190,17 @@
             this.rd_2.UseVisualStyleBackColor = true;
             this.rd_2.CheckedChanged += new System.EventHandler(this.rd_2_CheckedChanged);
             // 
-            // lbl_1
+            // rd_1
             // 
-            this.lbl_1.AutoSize = true;
-            this.lbl_1.Location = new System.Drawing.Point(141, 32);
-            this.lbl_1.Name = "lbl_1";
-            this.lbl_1.Size = new System.Drawing.Size(44, 16);
-            this.lbl_1.TabIndex = 2;
-            this.lbl_1.Text = "label1";
-            // 
-            // lbl_2
-            // 
-            this.lbl_2.AutoSize = true;
-            this.lbl_2.Location = new System.Drawing.Point(141, 62);
-            this.lbl_2.Name = "lbl_2";
-            this.lbl_2.Size = new System.Drawing.Size(44, 16);
-            this.lbl_2.TabIndex = 3;
-            this.lbl_2.Text = "label2";
+            this.rd_1.AutoSize = true;
+            this.rd_1.Location = new System.Drawing.Point(6, 32);
+            this.rd_1.Name = "rd_1";
+            this.rd_1.Size = new System.Drawing.Size(103, 20);
+            this.rd_1.TabIndex = 0;
+            this.rd_1.TabStop = true;
+            this.rd_1.Text = "radioButton1";
+            this.rd_1.UseVisualStyleBackColor = true;
+            this.rd_1.CheckedChanged += new System.EventHandler(this.rd_1_CheckedChanged);
             // 
             // Form_Kayitlar
             // 

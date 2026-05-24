@@ -125,13 +125,14 @@ namespace Otomasyon_Projesi
                 cmb_etkinlikler.DisplayMember = "EtkinlikBilgi";
                 cmb_etkinlikler.ValueMember = "Etkinlik_Id";
 
+                cmb_ogrenciler.SelectedIndex = -1;
+                cmb_etkinlikler.SelectedIndex = -1;
 
 
-               
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Yükleme Hatası: " + ex.Message);
+                MessageBox.Show("Veriler yüklenirken bir hata oluştu: " + ex.Message);
                 btn_kayit_listele_Click(sender, e);
 
 
@@ -288,6 +289,17 @@ namespace Otomasyon_Projesi
                     MessageBox.Show($"Hata = {ex.Message}");
                 }
             }
+        }
+
+        private void btn_ana_form_Click(object sender, EventArgs e)
+        {
+            AnaSayfaForm anaSayfa = new AnaSayfaForm();
+
+            
+            anaSayfa.Show();
+
+            
+            this.Hide();
         }
     }
 }
