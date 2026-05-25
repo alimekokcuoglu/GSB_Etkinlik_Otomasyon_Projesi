@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgw_ogrenciler = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_blok = new System.Windows.Forms.ComboBox();
@@ -46,6 +47,9 @@
             this.btn_guncelle = new System.Windows.Forms.Button();
             this.groupBox_gecis = new System.Windows.Forms.GroupBox();
             this.btn_form_kayitlar = new System.Windows.Forms.Button();
+            this.btn_raporlar = new System.Windows.Forms.Button();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ımageList2 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ogrenciler)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox_gecis.SuspendLayout();
@@ -230,11 +234,34 @@
             this.btn_form_kayitlar.UseVisualStyleBackColor = true;
             this.btn_form_kayitlar.Click += new System.EventHandler(this.btn_form_kayitlar_Click);
             // 
+            // btn_raporlar
+            // 
+            this.btn_raporlar.Location = new System.Drawing.Point(345, 442);
+            this.btn_raporlar.Name = "btn_raporlar";
+            this.btn_raporlar.Size = new System.Drawing.Size(178, 23);
+            this.btn_raporlar.TabIndex = 7;
+            this.btn_raporlar.Text = "Raporlar / Analiz";
+            this.btn_raporlar.UseVisualStyleBackColor = true;
+            this.btn_raporlar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.ımageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // ımageList2
+            // 
+            this.ımageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.ımageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.ımageList2.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // AnaSayfaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 504);
+            this.Controls.Add(this.btn_raporlar);
             this.Controls.Add(this.groupBox_gecis);
             this.Controls.Add(this.btn_guncelle);
             this.Controls.Add(this.btn_sil);
@@ -273,5 +300,8 @@
         private System.Windows.Forms.ComboBox cmb_blok;
         private System.Windows.Forms.GroupBox groupBox_gecis;
         private System.Windows.Forms.Button btn_form_kayitlar;
+        private System.Windows.Forms.Button btn_raporlar;
+        private System.Windows.Forms.ImageList ımageList1;
+        private System.Windows.Forms.ImageList ımageList2;
     }
 }

@@ -63,13 +63,27 @@
       <DependentUpon>AnaSayfaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Etkinlik.cs" />
+    <Compile Include="Form_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Dashboard.Designer.cs">
+      <DependentUpon>Form_Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Kayitlar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Kayitlar.Designer.cs">
       <DependentUpon>Form_Kayitlar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_LogKayitlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_LogKayitlari.Designer.cs">
+      <DependentUpon>Form_LogKayitlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Kayitlar.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,18 +91,33 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Memur.cs" />
+    <Compile Include="Migrations\202605242349182_LogTablosuEkle.cs" />
+    <Compile Include="Migrations\202605242349182_LogTablosuEkle.Designer.cs">
+      <DependentUpon>202605242349182_LogTablosuEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Ogrenci.cs" />
     <Compile Include="OgrenciDbContext.cs" />
+    <Compile Include="OgrenciService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnaSayfaForm.resx">
       <DependentUpon>AnaSayfaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dashboard.resx">
+      <DependentUpon>Form_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Kayitlar.resx">
       <DependentUpon>Form_Kayitlar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_LogKayitlari.resx">
+      <DependentUpon>Form_LogKayitlari.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202605242349182_LogTablosuEkle.resx">
+      <DependentUpon>202605242349182_LogTablosuEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

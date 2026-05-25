@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace Otomasyon_Projesi
 {
-    internal class OgrenciDbContext : DbContext
+    public class OgrenciDbContext : DbContext
     {
         public OgrenciDbContext() : base("name=GSB KYK Etkinlik Otomasyonu")
         {
@@ -18,5 +18,7 @@ namespace Otomasyon_Projesi
         public DbSet<Memur> Memurlar { get; set; }
         public DbSet<Etkinlik> Etkinlikler { get; set; }
         public DbSet<Kayitlar> Kayitlari { get; set; }
+
+        public DbSet<Log> Log{ get; set; }
     }
 }

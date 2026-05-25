@@ -86,8 +86,13 @@ namespace Otomasyon_Projesi
                     Ogrenci_Sifre = otomatikSifre
                 };
 
-                db.Ogrenciler.Add(newOgrenci);
-                db.SaveChanges();
+                OgrenciService service = new OgrenciService();
+
+              
+                service.OgrenciEkle(newOgrenci);
+
+                
+               
 
 
                 MessageBox.Show($"Yeni Öğrenci Başarıyla Tanımlandı!\nSistem Giriş Şifresi: {otomatikSifre}",
@@ -138,6 +143,7 @@ namespace Otomasyon_Projesi
                         string eskiSifre = ogrenci.Ogrenci_Sifre;
 
 
+                        Ogrenci guncelVeri = new Ogrenci { };
                         ogrenci.Ogrenci_TC_No = txt_tc.Text;
                         ogrenci.Ogrenci_Ad = txt_isim.Text;
                         ogrenci.Ogrenci_Soyad = txt_soyisim.Text;
@@ -145,7 +151,9 @@ namespace Otomasyon_Projesi
                         ogrenci.Ogrenci_Kat = Convert.ToInt32(txt_oda.Text);
                         ogrenci.Ogrenci_Sifre = yeniSifre;
 
-                        db.SaveChanges();
+                        
+                        OgrenciService service = new OgrenciService(); 
+                        service.OgrenciGuncelle(guncelVeri);
 
                         if (eskiSifre != ogrenci.Ogrenci_Sifre)
                         {
@@ -163,7 +171,7 @@ namespace Otomasyon_Projesi
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
                 MessageBox.Show("Güncelleme işlemi sırasında beklenmedik bir hata oluştu. Lütfen bilgileri kontrol edip tekrar deneyin.",
@@ -189,8 +197,10 @@ namespace Otomasyon_Projesi
                         Ogrenci ogrenci = db.Ogrenciler.Find(selectedId);
                         if (ogrenci != null)
                         {
-                            db.Ogrenciler.Remove(ogrenci);
-                            db.SaveChanges();
+                            int silinecekId = Convert.ToInt32(dgw_ogrenciler.CurrentRow.Cells[0].Value);
+
+                            OgrenciService service = new OgrenciService();
+                            service.OgrenciSil(silinecekId);
 
                             MessageBox.Show("Öğrenci Kaydı Sistemden Tamamen Silindi!",
                                             "Sistem Bildirimi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -252,12 +262,22 @@ namespace Otomasyon_Projesi
             if (dgw_ogrenciler.Columns["Kayitlari"] != null)
             {
                 dgw_ogrenciler.Columns["Kayitlari"].Visible = false;
+
+
+              
             }
         }
 
         private void dgw_ogrenciler_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form_Dashboard raporFormu = new Form_Dashboard();
+                                       
+            raporFormu.Show();
         }
     }
     }

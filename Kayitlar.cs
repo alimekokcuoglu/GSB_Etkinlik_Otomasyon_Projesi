@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Otomasyon_Projesi
 {
     [Table("Table_Kayitlar")]
-    internal class Kayitlar
+    public class Kayitlar
     {
         [Key]
         public int Kayit_Id { get; set; }

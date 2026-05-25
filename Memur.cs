@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Otomasyon_Projesi
 {
     [Table("Table_Memur")]
-    internal class Memur
+    public class Memur
     {
         [Key]
         public int Memur_Id { get; set; } 

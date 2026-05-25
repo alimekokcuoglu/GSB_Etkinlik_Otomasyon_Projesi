@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Otomasyon_Projesi
 {
     [Table("Table_Ogrenci")]
-    internal class Ogrenci
+    public class Ogrenci
     {
         [Key]
         public int Ogrenci_Id { get; set; }
