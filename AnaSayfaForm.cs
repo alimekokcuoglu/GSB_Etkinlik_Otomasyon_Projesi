@@ -128,57 +128,35 @@ namespace Otomasyon_Projesi
             {
                 if (dgw_ogrenciler.CurrentRow != null)
                 {
-                    int selectedId = Convert.ToInt32(dgw_ogrenciler.CurrentRow.Cells["Ogrenci_Id"].Value);
-                    Ogrenci ogrenci = db.Ogrenciler.Find(selectedId);
-
-                    if (ogrenci != null)
+                    Ogrenci guncelVeri = new Ogrenci
                     {
-                        if (string.IsNullOrEmpty(txt_tc.Text) || txt_tc.Text.Length != 11)
-                        {
-                            MessageBox.Show("Lütfen tam 11 haneli geçerli bir T.C. Kimlik Numarası giriniz!");
-                            return;
-                        }
-                        string yeniSifre = txt_tc.Text.Substring(txt_tc.Text.Length - 4);
+                        Ogrenci_Id = Convert.ToInt32(dgw_ogrenciler.CurrentRow.Cells["Ogrenci_Id"].Value),
+                        Ogrenci_Ad = txt_isim.Text,
+                        Ogrenci_Soyad = txt_soyisim.Text,
+                        Ogrenci_TC_No = txt_tc.Text,
+                        Ogrenci_Blok = cmb_blok.Text,
+                        Ogrenci_Kat = Convert.ToInt32(txt_oda.Text),
+                        Ogrenci_Sifre = txt_tc.Text.Substring(txt_tc.Text.Length - 4)
+                    };
 
-                        string eskiSifre = ogrenci.Ogrenci_Sifre;
+                   
+                    OgrenciService service = new OgrenciService();
+                    bool sifreDegisti = service.OgrenciGuncelle(guncelVeri);
 
+                    if (sifreDegisti)
+                        MessageBox.Show("Öğrenci güncellendi! (Şifre değişti)");
+                    else
+                        MessageBox.Show("Öğrenci güncellendi.");
 
-                        Ogrenci guncelVeri = new Ogrenci { };
-                        ogrenci.Ogrenci_TC_No = txt_tc.Text;
-                        ogrenci.Ogrenci_Ad = txt_isim.Text;
-                        ogrenci.Ogrenci_Soyad = txt_soyisim.Text;
-                        ogrenci.Ogrenci_Blok = cmb_blok.Text;
-                        ogrenci.Ogrenci_Kat = Convert.ToInt32(txt_oda.Text);
-                        ogrenci.Ogrenci_Sifre = yeniSifre;
-
-                        
-                        OgrenciService service = new OgrenciService(); 
-                        service.OgrenciGuncelle(guncelVeri);
-
-                        if (eskiSifre != ogrenci.Ogrenci_Sifre)
-                        {
-                            MessageBox.Show("Öğrenci bilgileri başarıyla güncellendi!\n\n" +
-                                            "Şifreniz değişti, yeni şifreniz: " + ogrenci.Ogrenci_Sifre,
-                                            "Sistem Bildirimi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Öğrenci bilgileri başarıyla güncellendi.",
-                                            "Sistem Bildirimi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
-                        btn_listele.PerformClick();
-                    }
+                    btn_listele.PerformClick();
+                   
                 }
             }
-            catch (Exception )
+            catch (Exception ex)
             {
-
-                MessageBox.Show("Güncelleme işlemi sırasında beklenmedik bir hata oluştu. Lütfen bilgileri kontrol edip tekrar deneyin.",
-                                "İşlem Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hata: " + ex.Message);
             }
         }
-
         private void btn_sil_Click(object sender, EventArgs e)
         {
             try
