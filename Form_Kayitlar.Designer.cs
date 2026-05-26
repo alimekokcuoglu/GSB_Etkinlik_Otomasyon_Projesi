@@ -50,6 +50,7 @@
             // 
             // dgw_kayitlar
             // 
+            this.dgw_kayitlar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgw_kayitlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw_kayitlar.Location = new System.Drawing.Point(12, 3);
             this.dgw_kayitlar.Name = "dgw_kayitlar";

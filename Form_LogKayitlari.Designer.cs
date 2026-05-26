@@ -34,6 +34,7 @@
             // 
             // grid_loglar
             // 
+            this.grid_loglar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grid_loglar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_loglar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_loglar.Location = new System.Drawing.Point(0, 0);
