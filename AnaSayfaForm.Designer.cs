@@ -50,6 +50,8 @@
             this.btn_raporlar = new System.Windows.Forms.Button();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ımageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.txt_arama = new System.Windows.Forms.TextBox();
+            this.lbl_arama = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ogrenciler)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox_gecis.SuspendLayout();
@@ -58,7 +60,7 @@
             // dgw_ogrenciler
             // 
             this.dgw_ogrenciler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw_ogrenciler.Location = new System.Drawing.Point(12, 12);
+            this.dgw_ogrenciler.Location = new System.Drawing.Point(12, 52);
             this.dgw_ogrenciler.Name = "dgw_ogrenciler";
             this.dgw_ogrenciler.RowHeadersWidth = 51;
             this.dgw_ogrenciler.RowTemplate.Height = 24;
@@ -79,7 +81,7 @@
             this.groupBox1.Controls.Add(this.lbl_tc);
             this.groupBox1.Controls.Add(this.lbl_soyisim);
             this.groupBox1.Controls.Add(this.lbl_isim);
-            this.groupBox1.Location = new System.Drawing.Point(22, 236);
+            this.groupBox1.Location = new System.Drawing.Point(21, 266);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(269, 217);
             this.groupBox1.TabIndex = 1;
@@ -176,7 +178,7 @@
             // 
             // btn_ekle
             // 
-            this.btn_ekle.Location = new System.Drawing.Point(383, 277);
+            this.btn_ekle.Location = new System.Drawing.Point(383, 326);
             this.btn_ekle.Name = "btn_ekle";
             this.btn_ekle.Size = new System.Drawing.Size(100, 23);
             this.btn_ekle.TabIndex = 2;
@@ -186,7 +188,7 @@
             // 
             // btn_listele
             // 
-            this.btn_listele.Location = new System.Drawing.Point(383, 236);
+            this.btn_listele.Location = new System.Drawing.Point(383, 297);
             this.btn_listele.Name = "btn_listele";
             this.btn_listele.Size = new System.Drawing.Size(100, 23);
             this.btn_listele.TabIndex = 3;
@@ -196,7 +198,7 @@
             // 
             // btn_sil
             // 
-            this.btn_sil.Location = new System.Drawing.Point(383, 365);
+            this.btn_sil.Location = new System.Drawing.Point(383, 393);
             this.btn_sil.Name = "btn_sil";
             this.btn_sil.Size = new System.Drawing.Size(100, 23);
             this.btn_sil.TabIndex = 4;
@@ -206,7 +208,7 @@
             // 
             // btn_guncelle
             // 
-            this.btn_guncelle.Location = new System.Drawing.Point(383, 326);
+            this.btn_guncelle.Location = new System.Drawing.Point(383, 362);
             this.btn_guncelle.Name = "btn_guncelle";
             this.btn_guncelle.Size = new System.Drawing.Size(100, 23);
             this.btn_guncelle.TabIndex = 5;
@@ -217,7 +219,7 @@
             // groupBox_gecis
             // 
             this.groupBox_gecis.Controls.Add(this.btn_form_kayitlar);
-            this.groupBox_gecis.Location = new System.Drawing.Point(562, 277);
+            this.groupBox_gecis.Location = new System.Drawing.Point(599, 302);
             this.groupBox_gecis.Name = "groupBox_gecis";
             this.groupBox_gecis.Size = new System.Drawing.Size(200, 200);
             this.groupBox_gecis.TabIndex = 6;
@@ -256,11 +258,30 @@
             this.ımageList2.ImageSize = new System.Drawing.Size(16, 16);
             this.ımageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // txt_arama
+            // 
+            this.txt_arama.Location = new System.Drawing.Point(287, 24);
+            this.txt_arama.Name = "txt_arama";
+            this.txt_arama.Size = new System.Drawing.Size(113, 22);
+            this.txt_arama.TabIndex = 8;
+            this.txt_arama.TextChanged += new System.EventHandler(this.txt_arama_TextChanged);
+            // 
+            // lbl_arama
+            // 
+            this.lbl_arama.AutoSize = true;
+            this.lbl_arama.Location = new System.Drawing.Point(436, 24);
+            this.lbl_arama.Name = "lbl_arama";
+            this.lbl_arama.Size = new System.Drawing.Size(87, 16);
+            this.lbl_arama.TabIndex = 9;
+            this.lbl_arama.Text = "Öğrenci Ara : ";
+            // 
             // AnaSayfaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 504);
+            this.Controls.Add(this.lbl_arama);
+            this.Controls.Add(this.txt_arama);
             this.Controls.Add(this.btn_raporlar);
             this.Controls.Add(this.groupBox_gecis);
             this.Controls.Add(this.btn_guncelle);
@@ -277,6 +298,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox_gecis.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -303,5 +325,7 @@
         private System.Windows.Forms.Button btn_raporlar;
         private System.Windows.Forms.ImageList ımageList1;
         private System.Windows.Forms.ImageList ımageList2;
+        private System.Windows.Forms.TextBox txt_arama;
+        private System.Windows.Forms.Label lbl_arama;
     }
 }
