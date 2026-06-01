@@ -57,7 +57,6 @@ namespace Otomasyon_Projesi
 
         private void btn_ekle_Click(object sender, EventArgs e)
         {
-            if (!AlanlarDolumu()) return;
             try
             {
 
@@ -262,27 +261,13 @@ namespace Otomasyon_Projesi
 
 
         }
-        private bool AlanlarDolumu()
-        {
-            foreach (Control control in this.Controls)
-            {
-                
-                if (control is TextBox && control.Name != "txt_arama" && string.IsNullOrWhiteSpace(control.Text))
-                {
-                    MessageBox.Show("Lütfen tüm alanları doldurunuz!");
-                    control.Focus();
-                    return false;
-                }
-            }
-            return true;
-        }
+      
 
         private void txt_arama_TextChanged(object sender, EventArgs e)
         {
             string aranan = txt_arama.Text.ToLower();
 
-            // Veritabanından gelen veriyi filtrele
-            // 'db' senin veritabanı değişkenin, 'Ogrenciler' de tablonun adı
+           
             var filtrelenmisListe = db.Ogrenciler
                 .Where(o => o.Ogrenci_Ad.ToLower().Contains(aranan) ||
                             o.Ogrenci_Soyad.ToLower().Contains(aranan))
@@ -291,6 +276,11 @@ namespace Otomasyon_Projesi
             dgw_ogrenciler.DataSource = filtrelenmisListe;
         
     }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }
     

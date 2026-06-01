@@ -51,10 +51,11 @@
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ımageList2 = new System.Windows.Forms.ImageList(this.components);
             this.txt_arama = new System.Windows.Forms.TextBox();
-            this.lbl_arama = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_ogrenciler)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox_gecis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgw_ogrenciler
@@ -260,27 +261,29 @@
             // 
             // txt_arama
             // 
-            this.txt_arama.Location = new System.Drawing.Point(287, 24);
+            this.txt_arama.Location = new System.Drawing.Point(370, 22);
             this.txt_arama.Name = "txt_arama";
             this.txt_arama.Size = new System.Drawing.Size(113, 22);
             this.txt_arama.TabIndex = 8;
             this.txt_arama.TextChanged += new System.EventHandler(this.txt_arama_TextChanged);
             // 
-            // lbl_arama
+            // pictureBox1
             // 
-            this.lbl_arama.AutoSize = true;
-            this.lbl_arama.Location = new System.Drawing.Point(436, 24);
-            this.lbl_arama.Name = "lbl_arama";
-            this.lbl_arama.Size = new System.Drawing.Size(87, 16);
-            this.lbl_arama.TabIndex = 9;
-            this.lbl_arama.Text = "Öğrenci Ara : ";
+            this.pictureBox1.Image = global::Otomasyon_Projesi.Properties.Resources.büyüteç;
+            this.pictureBox1.Location = new System.Drawing.Point(332, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // AnaSayfaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 504);
-            this.Controls.Add(this.lbl_arama);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_arama);
             this.Controls.Add(this.btn_raporlar);
             this.Controls.Add(this.groupBox_gecis);
@@ -297,6 +300,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox_gecis.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,6 +330,6 @@
         private System.Windows.Forms.ImageList ımageList1;
         private System.Windows.Forms.ImageList ımageList2;
         private System.Windows.Forms.TextBox txt_arama;
-        private System.Windows.Forms.Label lbl_arama;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
