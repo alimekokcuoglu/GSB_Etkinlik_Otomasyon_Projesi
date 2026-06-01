@@ -40,7 +40,7 @@ namespace Otomasyon_Projesi
                     mevcut.Ogrenci_Sifre = guncelOgrenci.Ogrenci_Sifre;
 
                     db.SaveChanges();
-                    Helper.LogEkle("Öğrenci Güncelleme", $"{guncelOgrenci.Ogrenci_Ad} güncellendi.");
+                    Helper.LogEkle("Öğrenci Güncelleme", $"{guncelOgrenci.Ogrenci_Ad} {guncelOgrenci.Ogrenci_Soyad} güncellendi.");
                     return sifreDegisti;
                 }
                 return false;
@@ -55,9 +55,10 @@ namespace Otomasyon_Projesi
                 var silinecek = db.Ogrenciler.Find(id);
                 if (silinecek != null)
                 {
+                    string silinenIsim = silinecek.Ogrenci_Ad + " " + silinecek.Ogrenci_Soyad;
                     db.Ogrenciler.Remove(silinecek);
                     db.SaveChanges();
-                    Helper.LogEkle("Öğrenci Silme", "Bir öğrenci silindi.");
+                    Helper.LogEkle("Öğrenci Silme", $"{silinenIsim} silindi.");
                 }
             }
         }
