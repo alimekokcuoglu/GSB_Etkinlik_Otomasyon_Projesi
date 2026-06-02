@@ -47,7 +47,27 @@ namespace Otomasyon_Projesi
             lbl_enpopuleretkinlik.Text = "En Popüler Etkinlik: " + (enPopuler ?? "Henüz veri yok");
 
 
-          
+            chart1.Series["Series1"].Points.Clear();
+            chart1.Legends[0].CustomItems.Clear();
+
+            
+            var grafikVerisi = db.Ogrenciler
+                .GroupBy(o => o.Ogrenci_Blok)
+                .Select(g => new { Blok = g.Key, Sayi = g.Count() })
+                .ToList();
+
+            foreach (var item in grafikVerisi)
+            {
+               
+                int noktaIndex = chart1.Series["Series1"].Points.AddXY(item.Blok, item.Sayi);
+
+                chart1.Series["Series1"].Points[noktaIndex].Label = item.Sayi.ToString();
+
+                chart1.Series["Series1"].Points[noktaIndex].LegendText = item.Blok.ToString();
+            }
+
+
+
 
         }
 
@@ -56,5 +76,7 @@ namespace Otomasyon_Projesi
             Form_LogKayitlari logEkranim = new Form_LogKayitlari();
             logEkranim.Show();
         }
+
+        
     }
 }

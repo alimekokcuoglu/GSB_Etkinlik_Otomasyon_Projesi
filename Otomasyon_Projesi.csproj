@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -145,6 +146,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\büyüteç1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giriş.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giriş-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3917688.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6172524.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geçiş.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2026-06-02 at 10.36.07.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2026-06-02 at 10.33.14.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2026-06-02 at 10.26.05.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2026-06-02 at 10.22.04.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2026-06-02 at 00.58.59.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2026-06-02 at 10.26.051.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

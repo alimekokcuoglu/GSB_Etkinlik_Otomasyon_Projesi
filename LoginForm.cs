@@ -57,6 +57,11 @@ namespace Otomasyon_Projesi
         {
 
         }
+
+        private void lbl_sifre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
           }
         

@@ -302,6 +302,11 @@ namespace Otomasyon_Projesi
             
             this.Hide();
         }
+
+        private void lbl_2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
