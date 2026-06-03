@@ -7,13 +7,13 @@ namespace Otomasyon_Projesi.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.2")]
-    public sealed partial class LogTablosuEkle : IMigrationMetadata
+    public sealed partial class TestMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(LogTablosuEkle));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TestMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202605242349182_LogTablosuEkle"; }
+            get { return "202606031338187_TestMigration"; }
         }
         
         string IMigrationMetadata.Source

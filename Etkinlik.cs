@@ -28,5 +28,8 @@ namespace Otomasyon_Projesi
 
         public virtual Memur Memur { get; set; }
         public virtual ICollection<Kayitlar> Kayitlari { get; set; }
+
+        
     }
-}
+    }
+

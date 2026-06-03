@@ -20,8 +20,12 @@ namespace Otomasyon_Projesi
 
        
         [MaxLength(50)]
-        public string Memur_Unvan { get; set; } //
+        public string Memur_Unvan { get; set; } 
+
+
 
         public virtual ICollection<Etkinlik> Etkinlikler { get; set; }
+        
+
     }
 }

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Otomasyon_Projesi.Etkinlik">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAQAAAABAAAQAAAAAAAAAAAAAgICAAAAACAA=</HashCode>
+      <FileName>Etkinlik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Otomasyon_Projesi.Kayitlar">
+    <Position X="2" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAQAAAAAAAAAAAEAAAAAAAAAAQAAAAgAAAAABCAAA=</HashCode>
+      <FileName>Kayitlar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Otomasyon_Projesi.Log">
+    <Position X="4.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQAQAAAAAAAAAAAAAAAAAIAAAAAAAAAABAAQA=</HashCode>
+      <FileName>Log.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Otomasyon_Projesi.Memur">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgAAAAAAAAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Memur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Otomasyon_Projesi.Ogrenci">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAAQAAAEgAAAAAAEAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Ogrenci.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
