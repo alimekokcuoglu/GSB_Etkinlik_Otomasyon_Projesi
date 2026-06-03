@@ -92,6 +92,10 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Memur.cs" />
+    <Compile Include="Migrations\202606031358028_Kontrol2.cs" />
+    <Compile Include="Migrations\202606031358028_Kontrol2.Designer.cs">
+      <DependentUpon>202606031358028_Kontrol2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Ogrenci.cs" />
     <Compile Include="OgrenciDbContext.cs" />
@@ -112,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202606031358028_Kontrol2.resx">
+      <DependentUpon>202606031358028_Kontrol2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
