@@ -291,8 +291,8 @@ Update-Database
 
 <div align="center">
 
-⭐ Bu proje Nesnesel Tasarım ve Programlama dersi final sınavı için geliştirilmiştir.Beğendiyseniz yıldız vermeyi unutmayın!
+ Bu proje Nesnesel Tasarım ve Programlama dersi final sınavı için geliştirilmiştir.
+⭐Beğendiyseniz yıldız vermeyi unutmayın!
 
-C# · Windows Forms · MSSQL · ADO.NET · .NET Framework 4.7.2
 
 </div>
