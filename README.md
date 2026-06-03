@@ -277,11 +277,11 @@ Update-Database
 
 ---
 
-## 👨‍💻 Geliştirici
+
 
 <div align="center">
 
-**Ali Mert Ekökcüoğlu**
+**Alime KÖKCÜOĞLU**
 
 [![GitHub](https://img.shields.io/badge/GitHub-alimekokcuoglu-181717?style=for-the-badge&logo=github)](https://github.com/alimekokcuoglu)
 
