@@ -42,6 +42,22 @@ namespace Otomasyon_Projesi
 
 
         public virtual ICollection<Kayitlar> Kayitlari { get; set; }
+
+        public Kayitlar Kayitlar
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Memur Memur
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
 

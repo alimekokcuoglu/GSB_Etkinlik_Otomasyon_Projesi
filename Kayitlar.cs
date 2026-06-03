@@ -20,10 +20,5 @@ namespace Otomasyon_Projesi
 
         public virtual Ogrenci Ogrenci { get; set; } 
         public virtual Etkinlik Etkinlik { get; set; }
-
-        public virtual ICollection<Log> Loglar { get; set; }
-
-      
         }
     }
-    

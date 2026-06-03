@@ -10,6 +10,11 @@ namespace Otomasyon_Projesi
 {
     public class OgrenciDbContext : DbContext
     {
+        static OgrenciDbContext()
+        {
+            Database.SetInitializer<OgrenciDbContext>(null);
+        }
+
         public OgrenciDbContext() : base("name=GSB KYK Etkinlik Otomasyonu")
         {
         }
@@ -19,6 +24,6 @@ namespace Otomasyon_Projesi
         public DbSet<Etkinlik> Etkinlikler { get; set; }
         public DbSet<Kayitlar> Kayitlari { get; set; }
 
-        public DbSet<Log> Log{ get; set; }
+        public DbSet<Log> Loglar { get; set; }
     }
 }

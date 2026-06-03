@@ -12,12 +12,24 @@ namespace Otomasyon_Projesi
 {
     public partial class AnaSayfaForm : Form
     {
-
-        OgrenciDbContext db = new OgrenciDbContext();
+        private OgrenciDbContext db;
 
         public AnaSayfaForm()
         {
             InitializeComponent();
+        }
+
+        private OgrenciDbContext DbContext
+        {
+            get
+            {
+                if (db == null)
+                {
+                    db = new OgrenciDbContext();
+                }
+
+                return db;
+            }
         }
        
 
@@ -26,7 +38,7 @@ namespace Otomasyon_Projesi
         {
             try
             {
-                var ogrenciler = db.Ogrenciler.ToList();
+                var ogrenciler = DbContext.Ogrenciler.ToList();
                 dgw_ogrenciler.DataSource = ogrenciler;
 
                 dgw_ogrenciler.Columns["Ogrenci_Id"].HeaderText = "Öğrenci ID";
@@ -173,7 +185,7 @@ namespace Otomasyon_Projesi
                     if (dgw_ogrenciler.CurrentRow != null)
                     {
                         int selectedId = Convert.ToInt32(dgw_ogrenciler.CurrentRow.Cells["Ogrenci_Id"].Value);
-                        Ogrenci ogrenci = db.Ogrenciler.Find(selectedId);
+                        Ogrenci ogrenci = DbContext.Ogrenciler.Find(selectedId);
                         if (ogrenci != null)
                         {
                             int silinecekId = Convert.ToInt32(dgw_ogrenciler.CurrentRow.Cells[0].Value);
@@ -268,7 +280,7 @@ namespace Otomasyon_Projesi
             string aranan = txt_arama.Text.ToLower();
 
            
-            var filtrelenmisListe = db.Ogrenciler
+            var filtrelenmisListe = DbContext.Ogrenciler
                 .Where(o => o.Ogrenci_Ad.ToLower().Contains(aranan) ||
                             o.Ogrenci_Soyad.ToLower().Contains(aranan))
                 .ToList();

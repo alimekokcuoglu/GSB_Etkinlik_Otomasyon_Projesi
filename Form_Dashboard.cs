@@ -23,7 +23,11 @@ namespace Otomasyon_Projesi
         private void Form_Dashboard_Load(object sender, EventArgs e)
 
         {
-           
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+            {
+                return;
+            }
+
             OgrenciDbContext db = new OgrenciDbContext();
 
             int toplamOgrenci = db.Ogrenciler.Count();

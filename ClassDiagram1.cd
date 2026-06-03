@@ -6,20 +6,26 @@
       <HashCode>AAAACAAAAQAAAABAAAQAAAAAAAAAAAAAgICAAAAACAA=</HashCode>
       <FileName>Etkinlik.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Memur1" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Otomasyon_Projesi.Kayitlar">
     <Position X="2" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAQAAAAAAAAAAAEAAAAAAAAAAQAAAAgAAAAABCAAA=</HashCode>
+      <HashCode>AgAAQAAAAAAAAAAAAAAAAAAAAAAQAAAAgAAAAABCAAA=</HashCode>
       <FileName>Kayitlar.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Otomasyon_Projesi.Log">
     <Position X="4.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAQAQAAAAAAAAAAAAAAAAAIAAAAAAAAAABAAQA=</HashCode>
+      <HashCode>AAACAAAQAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Log.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Etkinlik" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Otomasyon_Projesi.Memur">
     <Position X="9.75" Y="1" Width="1.5" />
@@ -31,9 +37,13 @@
   <Class Name="Otomasyon_Projesi.Ogrenci">
     <Position X="6.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgQAAAAAAQAAAEgAAAAAAEAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AgQAAAAAAQAAAEgAAAAAAEAAAAAAAACAAACAAAAAAAA=</HashCode>
       <FileName>Ogrenci.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Kayitlar" />
+      <Property Name="Memur" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WeaRIP7c7ds=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PC\\OneDrive\\Desktop\\GSB_Etkinlik_Otomasyon_Projesi\\Otomasyon_Projesi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\entityframework\\6.5.2\\entityframework.6.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -15,39 +15,37 @@ namespace Otomasyon_Projesi
 {
     public partial class Form_Kayitlar : Form
     {
+        private const string KayitIdColumnName = "KayitId";
+        private OgrenciDbContext db;
+
         public Form_Kayitlar()
         {
             InitializeComponent();
         }
 
-        OgrenciDbContext db = new OgrenciDbContext();
+        private OgrenciDbContext DbContext
+        {
+            get
+            {
+                if (db == null)
+                {
+                    db = new OgrenciDbContext();
+                }
+
+                return db;
+            }
+        }
+
+        private static bool IsDesignerHosted()
+        {
+            return LicenseManager.UsageMode == LicenseUsageMode.Designtime;
+        }
 
         private void btn_kayit_listele_Click(object sender, EventArgs e)
         {
             try
             {
-                var list = db.Kayitlari
-        .Include(k => k.Ogrenci)
-        .Include(k => k.Etkinlik)
-        .Select(k => new
-        {
-            Kayıt_Id = k.Kayit_Id,
-            OgrenciAd = k.Ogrenci.Ogrenci_Ad,
-            OgrenciSoyad = k.Ogrenci.Ogrenci_Soyad,
-            EtkinlikAdı = k.Etkinlik.Etkinlik_Adi,
-            EtkinlikYeri = k.Etkinlik.Etkinlik_Yeri,
-
-            MemurAdSoyad = k.Etkinlik.Memur.Memur_Ad_Soyad,
-
-            Tarih = k.Kayit_Tarihi
-        })
-        .ToList();
-
-                dgw_kayitlar.DataSource = list;
-                dgw_kayitlar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgw_kayitlar.Columns[0].Visible = false;
-
-
+                KayitlariListele();
             }
 
             catch (Exception ex)
@@ -65,12 +63,12 @@ namespace Otomasyon_Projesi
         private void KayitlariListele()
         {
 
-            var list = db.Kayitlari
+            var list = DbContext.Kayitlari
                 .Include(k => k.Ogrenci)
                 .Include(k => k.Etkinlik)
                 .Select(k => new
                 {
-                    Kayit_Id = k.Kayit_Id,
+                    KayitId = k.Kayit_Id,
                     OgrenciAd = k.Ogrenci.Ogrenci_Ad,
                     OgrenciSoyad = k.Ogrenci.Ogrenci_Soyad,
                     EtkinlikAdi = k.Etkinlik.Etkinlik_Adi,
@@ -84,7 +82,7 @@ namespace Otomasyon_Projesi
             if (dgw_kayitlar.Columns.Count > 0)
 
             {
-                dgw_kayitlar.Columns[0].Visible = false;
+                dgw_kayitlar.Columns[KayitIdColumnName].Visible = false;
             }
         }
 
@@ -98,8 +96,15 @@ namespace Otomasyon_Projesi
 
             try
             {
+                if (IsDesignerHosted())
+                {
+                    return;
+                }
 
-                cmb_ogrenciler.DataSource = db.Ogrenciler
+                dgw_kayitlar.AllowUserToAddRows = false;
+                dgw_kayitlar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                cmb_ogrenciler.DataSource = DbContext.Ogrenciler
                     .OrderBy(o => o.Ogrenci_Ad)
                     .Select(o => new
                     {
@@ -111,7 +116,7 @@ namespace Otomasyon_Projesi
                 cmb_ogrenciler.ValueMember = "Ogrenci_Id";
 
 
-                cmb_etkinlikler.DataSource = db.Etkinlikler
+                cmb_etkinlikler.DataSource = DbContext.Etkinlikler
                 .Include(etkinlik => etkinlik.Memur)
                 .OrderBy(etkinlik => etkinlik.Etkinlik_Adi)
                 .Select(etkinlik => new
@@ -127,23 +132,11 @@ namespace Otomasyon_Projesi
 
                 cmb_ogrenciler.SelectedIndex = -1;
                 cmb_etkinlikler.SelectedIndex = -1;
-
-
+                dgw_kayitlar.DataSource = null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Veriler yüklenirken bir hata oluştu: " + ex.Message);
-                btn_kayit_listele_Click(sender, e);
-
-
-                dgw_kayitlar.AllowUserToAddRows = false;
-
-
-                dgw_kayitlar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
-
-              
             }
         }
 
@@ -151,6 +144,12 @@ namespace Otomasyon_Projesi
         {
             try
             {
+                if (cmb_ogrenciler.SelectedValue == null || cmb_etkinlikler.SelectedValue == null)
+                {
+                    MessageBox.Show("Lütfen önce öğrenci ve etkinlik seçiniz.");
+                    return;
+                }
+
                 int secilenOgrenciId = (int)cmb_ogrenciler.SelectedValue;
                 int secilenEtkinlikId = (int)cmb_etkinlikler.SelectedValue;
 
@@ -163,8 +162,8 @@ namespace Otomasyon_Projesi
                 };
 
 
-                db.Kayitlari.Add(yeniKayit);
-                db.SaveChanges();
+                DbContext.Kayitlari.Add(yeniKayit);
+                DbContext.SaveChanges();
 
                 MessageBox.Show("Kayıt başarıyla eklendi.");
 
@@ -194,13 +193,13 @@ namespace Otomasyon_Projesi
                     if (dgw_kayitlar.CurrentRow != null)
                     {
 
-                        int selectedId = Convert.ToInt32(dgw_kayitlar.CurrentRow.Cells["Kayıt_Id"].Value);
-                        var recordToDelete = db.Kayitlari.Find(selectedId);
+                        int selectedId = Convert.ToInt32(dgw_kayitlar.CurrentRow.Cells[KayitIdColumnName].Value);
+                        var recordToDelete = DbContext.Kayitlari.Find(selectedId);
 
                         if (recordToDelete != null)
                         {
-                            db.Kayitlari.Remove(recordToDelete);
-                            db.SaveChanges();
+                            DbContext.Kayitlari.Remove(recordToDelete);
+                            DbContext.SaveChanges();
                             MessageBox.Show("Kayıt başarıyla silindi.");
 
 
@@ -228,7 +227,7 @@ namespace Otomasyon_Projesi
                 if (rd_1.Checked)
                 {
 
-                    var result = db.Kayitlari
+                    var result = DbContext.Kayitlari
                         .GroupBy(k => new
                         {
                             k.Ogrenci.Ogrenci_Id,
@@ -266,7 +265,7 @@ namespace Otomasyon_Projesi
                 try
                 {
 
-                    var result = db.Kayitlari
+                    var result = DbContext.Kayitlari
                         .GroupBy(k => k.Etkinlik.Etkinlik_Adi)
                         .Select(g => new
                         {

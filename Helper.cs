@@ -21,7 +21,7 @@ namespace Otomasyon_Projesi
                 yeniLog.Detay = detay;
                 yeniLog.Tarih = DateTime.Now;
 
-                db.Log.Add(yeniLog);
+                db.Loglar.Add(yeniLog);
                 db.SaveChanges();
             }
         }

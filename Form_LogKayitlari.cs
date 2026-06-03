@@ -23,17 +23,22 @@ namespace Otomasyon_Projesi
 
         private void Form_LogKayitlari_Load(object sender, EventArgs e)
         {
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+            {
+                return;
+            }
+
             using (var db = new OgrenciDbContext())
             {
                 
-                int logCount = db.Log.Count();
+                int logCount = db.Loglar.Count();
 
                
                 MessageBox.Show("Veritabanında bulunan toplam log sayısı: " + logCount);
 
                 if (logCount > 0)
                 {
-                    grid_loglar.DataSource = db.Log.OrderByDescending(x => x.Tarih).ToList();
+                    grid_loglar.DataSource = db.Loglar.OrderByDescending(x => x.Tarih).ToList();
                 }
             }
         }
