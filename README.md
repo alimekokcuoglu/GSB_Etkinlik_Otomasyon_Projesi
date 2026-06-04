@@ -122,8 +122,8 @@ Manuel kâğıt tabanlı işlemlerin yerini alan bu sistem sayesinde:
     │ 🔗 Etkinlik_Id (FK)     │
     │ Kayit_Tarihi            │
     └─────────────────────────┘
-         │ 1
-         │
+         
+         
     ┌────▼──────────┐
     │     Log       │
     ├───────────────┤
